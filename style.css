@@ -1,0 +1,51 @@
+.dark {
+    background-color: black;
+    color: azure;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+
+.grey {
+    background-color: grey;
+    color: white;
+}
+
+.compact li {
+    padding: 2px;
+
+}
+
+.expanded li {
+    padding: 20px;
+}
+
+.optimal li {
+    padding: 10px;
+}
+
+#list {
+    box-sizing: border-box;
+    outline: rgb(82, 82, 82) solid 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+#themeInfo {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#listInfo {
+    text-align: center;
+    padding-top: 20px;
+}
+
+h1 {
+    text-align: center;
+
+}
