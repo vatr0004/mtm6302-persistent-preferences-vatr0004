@@ -18,49 +18,32 @@ for (i = 0; i <= arr.length - 1; i++) {
 
 cont.appendChild(ul);
 
+const $body = document.getElementById('body');
+const $theme_color = document.getElementById('theme_color');
+const $list = document.getElementById('list');
+const $list_style = document.getElementById('list_style');
+
+if (typeof(Storage) !== "undefined") {
+    $theme_color.value = localStorage.getItem('theme_color');
+    $body.className = localStorage.getItem('theme_color');
+    $list_style.value = localStorage.getItem('list_style');
+    $list.className = localStorage.getItem('list_style');
+}
+
 //Work with the theme colours now 
-const $theme_color = document.getElementById('theme_color')
-const $body = document.getElementById('body')
 $theme_color.addEventListener('change', function(e) {
-
-    if (
-        e.target.value === 'dark' 
-    )
-        $body.className = 'dark'
-
-    else if (
-        e.target.value === 'grey'
-    )
-        $body.className = 'grey'
-
-    else if (
-        e.target.value === 'light'
-    )
-        $body.className = 'light'
-
+    if (e.target.value != "") {
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem('theme_color', e.target.value);
+        }
+        $body.className = e.target.value;
+    }
 })
-
-
 
 //Work with the list styles now 
-const $list_style = document.getElementById('list_style')
-const $list = document.getElementById('list')
-
 $list_style.addEventListener('change', function (e) {
-    if (
-        e.target.value === 'compact'
-    )
-        $list.className = 'compact'
-
-    else if (
-        e.target.value === 'expanded'
-    )
-        $list.className = 'expanded'
-
-    else if (
-        e.target.value === 'optimal'
-    )
-        $list.className = 'optimal'
-
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem('list_style', e.target.value);
+    }
+    $list.className = e.target.value;
 })
-
